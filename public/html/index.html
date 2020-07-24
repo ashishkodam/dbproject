@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>DataBase Management Tool</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--  link to the stylesheet -->
+  <link href="../css/style.css" rel="stylesheet" type="text/css">
+  <!--   link to the JS! -->
+  <script defer type="text/javascript" src="../js/main.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">DB Management Tool</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 10%;">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="insert.html">Insert</a></li>
+          <li><a href="delete.html">Delete</a></li>
+          <li><a href="max.html">Max</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div class="container">
+      <br>
+      <div class="body">
+        <div class="col s12 m7">
+          <div class="card  indigo brown lighten-5">
+            <div class="card-content white-text">
+              <div class="col s12">
+                <div class="row">
+                  <div class="input-field col s10">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Textarea</label>
+                  </div>
+                  <div class=" col 2">
+                    <button class="btn waves-effect waves-light" type="submit" name="action" onclick="submitQury()">Submit
+                      <i class="material-icons right">send</i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div id="returnData"></div>
+  </section>
+
+</body>
+
+</html>

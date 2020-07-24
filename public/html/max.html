@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>DataBase Management Tool</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--  link to the stylesheet -->
+  <link href="../css/style.css" rel="stylesheet" type="text/css">
+  <!--   link to the JS! -->
+  <script defer type="text/javascript" src="../js/main.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">DB Management Tool</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 10%;">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="insert.html">Insert</a></li>
+          <li><a href="delete.html">Delete</a></li>
+          <li><a href="max.html">Max</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section class="bg-light">
+    <div class="container-fluid">
+      <div class="body">
+        <div class="card  ">
+          <div class="card-content">
+            <div class="col s12 ">
+              <h6>Select Table</h6>
+              <br>
+              <div class="row">
+                <button type="button" class="btn btn-primary active col-s12 tableList" aria-pressed="true"
+                  id="tableList1" onclick="maxTable('players')">Player</button>
+                <button type="button" class="btn btn-primary active col-s12 tableList" aria-pressed="true"
+                  id="tableList2" onclick="maxTable('play')">Play</button>
+                <button type="button" class="btn btn-primary active col-s12 tableList" aria-pressed="true"
+                  id="tableList3" onclick="maxTable('games')">Games</button>
+                <button type="button" class="btn btn-primary active col-s12 tableList" aria-pressed="true"
+                  id="tableList4" onclick="maxTable('teams')">Teams</button>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+    <div class="container">
+        <h1 id="max"></h1>
+    </div>
+  </section>
+</body>
+
+</html>
