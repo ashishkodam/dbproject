@@ -1,0 +1,5 @@
+1, Andy , Dalton ,1001, QB ,3,100,55000
+2, Shea , Patterson ,1002, QB ,2,100,60000
+3, Nathan , Peterman ,1003, QB ,2,110,75000
+4, Brandon , Aiyuk ,1004, WR ,4,105,65000
+5, David , Johnson ,1005, RB ,6,103,75000

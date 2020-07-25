@@ -20,11 +20,35 @@ function submitQury() {
       console.log(data);
     } else {
       let retunResponce = data;
-      console.log(retunResponce)
-      for (i = 0; i < retunResponce.returnData.length; i++) {
-        text += retunResponce.returnData[i] + "<br>";
+      
+      var col = [];
+      retunResponce.map(i => {
+        for (var key in i) {
+          if (col.indexOf(key) === -1) {
+            col.push(key);
+          }
+        }
+      })
+      var table = document.createElement("table");
+      var tr = table.insertRow(-1);
+
+      col.map(c => {
+        var th = document.createElement("th");
+        th.innerHTML = c;
+        tr.appendChild(th);
+      })
+      for (var i = 0; i < retunResponce.length; i++) {
+
+        tr = table.insertRow(-1);
+
+        for (var j = 0; j < col.length; j++) {
+          var tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = retunResponce[i][col[j]];
+        }
       }
-      document.getElementById('returnData').innerHTML = text
+      var divContainer = document.getElementById("returnData");
+      divContainer.innerHTML = "";
+      divContainer.appendChild(table);
     }
   };
 
@@ -50,14 +74,15 @@ form.addEventListener('submit', e => {
   var value = radios.length > 0 ? radios[0].value : null;
   console.log(value);
   const files = document.querySelector('[name=file]').files;
+  const filepath = document.querySelector('[name=file]').value;
   var formData = new FormData();
 
   formData.append("table", selectTable);
-  formData.append("insetType", value); // number 123456 is immediately converted to a string "123456"
+  formData.append("insetType", value);
 
   // HTML file input, chosen by user
   formData.append("userfile", files[0]);
-
+  formData.append("filepath", filepath);
   var request = new XMLHttpRequest();
 
   request.onload = () => {
@@ -147,9 +172,9 @@ function maxTable(params) {
       var text = "";
       var i;
       for (i = 0; i < data.length; i++) {
-        text += Object.keys(data[i])+' of ' + tableName +' : '+ Object.values(data[i] )+ "<br>";
+        text += Object.keys(data[i]) + ' of ' + tableName + ' : ' + Object.values(data[i]) + "<br>";
       }
-      document.getElementById('max').innerHTML =text
+      document.getElementById('max').innerHTML = text
     }
   }
   xhr.send(`${'table='}${tableName}`);
